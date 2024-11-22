@@ -1,0 +1,35 @@
+<form #registrationForm="ngForm" (ngSubmit)="handleSubmit(registrationForm)">
+  <label for="firstName">First Name:</label>
+  <input id="firstName" type="text" name="firstName" ngModel >
+
+  <label for="lastName">Last Name:</label>
+  <input id="lastName" type="text" name="lastName" ngModel >
+
+  <br>
+  <br>
+
+
+
+  <label for="email">E-mail:</label>
+  <input id="email" type="email" name="email" ngModel >
+
+  <label for="Contact No.">Contact No.:</label>
+  <input id="Contact No." type="number" name="Contact No." ngModel >
+
+  <br>
+  <br>
+
+
+
+  <label for="password">Password:</label>
+  <input id="password" type="password" name="password" (keyup)="handlePasswordChange($event)" ngModel >
+
+
+  <label for="Confirm Password">Confirm Password:</label>
+  <input id="Confirm Password" type="password" name="Confirm Password" (keyup)="handleConfirmPasswordChange($event)" ngModel >
+  <span *ngIf="showPasswordError" style="color: red;">Password Not Matched</span>
+  <br>
+  <br>
+
+  <button type="submit">Submit</button>
+</form>
